@@ -1,29 +1,38 @@
 :root {
-    --red: #d62828;
-    --dark-red: #8f1111;
-    --black: #111111;
+    --spider-red: #e63946;       /* Merah Terang khas Spider-Man */
+    --spider-dark-red: #9e1b24;  /* Merah Gelap untuk Efek Hover */
+    --spider-black: #0d0d0d;     /* Hitam Utama */
+    --spider-card-bg: #161616;   /* Hitam Karbon untuk Kotak Konten */
+    --spider-border: #262626;    /* Garis Batas Gelap */
     --white: #ffffff;
-    --light: #f4f4f4;
+    --gray-text: #b3b3b3;
 }
 
+/* Reset Dasar */
 * {
     box-sizing: border-box;
-    color: var(--white);
-    background: var(--black);
+    margin: 0;
+    padding: 0;
+}
+
 html {
     scroll-behavior: smooth;
 }
 
 body {
-    background: var(--black);
-    background: var(--light);
-    font-family: Arial, sans-serif;
+    background-color: var(--spider-black);
+    color: var(--white);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
 }
 
+/* Header & Navigasi */
 header {
-    background: var(--black);
-    color: var(--white);
+    background: rgba(13, 13, 13, 0.95);
+    border-bottom: 2px solid var(--spider-red);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 nav {
@@ -35,16 +44,21 @@ nav {
     padding: 18px 24px;
 }
 
-    border: 1px solid var(--red);
-    background: var(--red);
-    text-decoration: none;
-}
-
 .logo {
     color: var(--white);
-    font-weight: bold;
-    border: 2px solid var(--black);
-    background: var(--black);
+    font-weight: 800;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    border: 2px solid var(--spider-red);
+    padding: 4px 12px;
+    background: var(--spider-black);
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    background: var(--spider-red);
+    color: var(--white);
 }
 
 .nav-links {
@@ -52,11 +66,19 @@ nav {
     gap: 22px;
 }
 
-.nav-links a:hover,
-footer a:hover {
-    color: var(--white);
+.nav-links a {
+    color: var(--gray-text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.3s ease;
 }
 
+.nav-links a:hover {
+    color: var(--spider-red);
+}
+
+/* Konten Utama & Section Box */
 main {
     max-width: 1000px;
     margin: auto;
@@ -64,47 +86,188 @@ main {
 }
 
 .section-box {
-    margin-bottom: 24px;
+    margin-bottom: 30px;
     padding: 32px;
-    background: transparent;
+    background: var(--spider-card-bg);
+    border: 1px solid var(--spider-border);
+    border-left: 4px solid var(--spider-red);
+    border-radius: 6px;
 }
 
+/* Hero Section */
 .hero {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 310px;
+    min-height: 280px;
 }
 
-h1,
-h2 {
-    margin-top: 0;
+h1, h2 {
+    color: var(--white);
     line-height: 1.2;
+    margin-bottom: 12px;
 }
 
 h1 {
-    font-size: 42px;
+    font-size: 38px;
+    font-weight: 800;
 }
 
 h1 span,
 .tag {
-    color: var(--red);
+    color: var(--spider-red);
 }
 
 .tag {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
 }
 
+p {
+    color: var(--gray-text);
+    margin-bottom: 16px;
+}
+
+.section-box p {
+    color: var(--white);
+}
+
+/* Tombol Akses */
 .button,
 button {
     display: inline-block;
-    border: 0;
-    padding: 10px 18px;
+    border: none;
+    padding: 12px 24px;
     color: var(--white);
-    background: var(--red);
+    background: var(--spider-red);
     cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover,
+button:hover {
+    background: var(--spider-dark-red);
+    transform: translateY(-2px);
+}
+
+/* Logo Inisial / Profile Mark */
+.profile-mark {
+    display: grid;
+    place-items: center;
+    width: 150px;
+    height: 150px;
+    color: var(--white);
+    background: var(--spider-black);
+    border: 3px solid var(--spider-red);
+    font-size: 80px;
+    font-weight: 900;
+    box-shadow: 0 0 15px rgba(230, 57, 70, 0.3);
+}
+
+/* Kemampuan / Skills */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.skills span {
+    padding: 8px 16px;
+    color: var(--white);
+    background: var(--spider-black);
+    border: 1px solid var(--spider-red);
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Form Kontak (contact.html) */
+form {
+    display: grid;
+    gap: 14px;
+    max-width: 600px;
+    margin-top: 10px;
+}
+
+label {
+    font-weight: 600;
+    color: var(--white);
+}
+
+input,
+textarea {
+    width: 100%;
+    border: 1px solid var(--spider-border);
+    padding: 12px;
+    font: inherit;
+    border-radius: 4px;
+    color: var(--white);
+    background: var(--spider-black);
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--spider-red);
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 24px;
+    color: var(--gray-text);
+    background: var(--spider-black);
+    border-top: 1px solid var(--spider-border);
+    font-size: 14px;
+}
+
+/* Responsif untuk Layar HP */
+@media (max-width: 650px) {
+    nav,
+    footer,
+    .hero {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 10px 16px;
+        margin-top: 14px;
+    }
+
+    main {
+        padding: 24px 14px;
+    }
+
+    .section-box {
+        padding: 24px 18px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .profile-mark {
+        width: 110px;
+        height: 110px;
+        margin-top: 20px;
+        font-size: 55px;
+    }
+}
     font-weight: bold;
 }
 
