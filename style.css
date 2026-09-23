@@ -1,35 +1,20 @@
-:root {
-    --spider-red: #e63946;       /* Merah Terang khas Spider-Man */
-    --spider-dark-red: #9e1b24;  /* Merah Gelap untuk Efek Hover */
-    --spider-black: #0d0d0d;     /* Hitam Utama */
-    --spider-card-bg: #161616;   /* Hitam Karbon untuk Kotak Konten */
-    --spider-border: #262626;    /* Garis Batas Gelap */
-    --white: #ffffff;
-    --gray-text: #b3b3b3;
-}
-
-/* Reset Dasar */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: var(--spider-black);
-    color: var(--white);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
     line-height: 1.6;
 }
 
 /* Header & Navigasi */
 header {
-    background: rgba(13, 13, 13, 0.95);
-    border-bottom: 2px solid var(--spider-red);
+    background-color: #1e1e1e;
+    padding: 1rem 5%;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -39,358 +24,102 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1000px;
-    margin: auto;
-    padding: 18px 24px;
 }
 
 .logo {
-    color: var(--white);
-    font-weight: 800;
-    font-size: 22px;
-    letter-spacing: 2px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ff4d4d;
     text-decoration: none;
-    border: 2px solid var(--spider-red);
-    padding: 4px 12px;
-    background: var(--spider-black);
-    transition: all 0.3s ease;
-}
-
-.logo:hover {
-    background: var(--spider-red);
-    color: var(--white);
-}
-
-.nav-links {
-    display: flex;
-    gap: 22px;
 }
 
 .nav-links a {
-    color: var(--gray-text);
+    color: #fff;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 15px;
-    transition: color 0.3s ease;
+    margin-left: 20px;
+    transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: var(--spider-red);
+    color: #ff4d4d;
 }
 
-/* Konten Utama & Section Box */
+/* Main Container */
 main {
-    max-width: 1000px;
-    margin: auto;
-    padding: 40px 24px;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 20px;
 }
 
+/* Section Box */
 .section-box {
-    margin-bottom: 30px;
-    padding: 32px;
-    background: var(--spider-card-bg);
-    border: 1px solid var(--spider-border);
-    border-left: 4px solid var(--spider-red);
-    border-radius: 6px;
+    background-color: #1e1e1e;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
-/* Hero Section */
+/* Section Hero / Home */
 .hero {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    min-height: 280px;
-}
-
-h1, h2 {
-    color: var(--white);
-    line-height: 1.2;
-    margin-bottom: 12px;
-}
-
-h1 {
-    font-size: 38px;
-    font-weight: 800;
-}
-
-h1 span,
-.tag {
-    color: var(--spider-red);
-}
-
-.tag {
-    font-size: 12px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 8px;
-}
-
-p {
-    color: var(--gray-text);
-    margin-bottom: 16px;
-}
-
-.section-box p {
-    color: var(--white);
-}
-
-/* Tombol Akses */
-.button,
-button {
-    display: inline-block;
-    border: none;
-    padding: 12px 24px;
-    color: var(--white);
-    background: var(--spider-red);
-    cursor: pointer;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 4px;
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 1px;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-.button:hover,
-button:hover {
-    background: var(--spider-dark-red);
-    transform: translateY(-2px);
-}
-
-/* Logo Inisial / Profile Mark */
-.profile-mark {
-    display: grid;
-    place-items: center;
-    width: 150px;
-    height: 150px;
-    color: var(--white);
-    background: var(--spider-black);
-    border: 3px solid var(--spider-red);
-    font-size: 80px;
-    font-weight: 900;
-    box-shadow: 0 0 15px rgba(230, 57, 70, 0.3);
-}
-
-/* Kemampuan / Skills */
-.skills {
-    display: flex;
+    justify-content: space-between;
+    gap: 20px;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 10px;
 }
 
+.hero h1 span {
+    color: #ff4d4d;
+}
+
+.tag {
+    color: #ff4d4d;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Pengaturan Foto Profil Bulat */
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ff4d4d;
+    box-shadow: 0 4px 12px rgba(255, 77, 77, 0.2);
+}
+
+/* Tombol */
+.button {
+    display: inline-block;
+    background-color: #ff4d4d;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 15px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background-color: #e63939;
+}
+
+/* Skills */
 .skills span {
+    display: inline-block;
+    background-color: #2a2a2a;
     padding: 8px 16px;
-    color: var(--white);
-    background: var(--spider-black);
-    border: 1px solid var(--spider-red);
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: 600;
-}
-
-/* Form Kontak (contact.html) */
-form {
-    display: grid;
-    gap: 14px;
-    max-width: 600px;
-    margin-top: 10px;
-}
-
-label {
-    font-weight: 600;
-    color: var(--white);
-}
-
-input,
-textarea {
-    width: 100%;
-    border: 1px solid var(--spider-border);
-    padding: 12px;
-    font: inherit;
-    border-radius: 4px;
-    color: var(--white);
-    background: var(--spider-black);
-    transition: border-color 0.3s ease;
-}
-
-input:focus,
-textarea:focus {
-    outline: none;
-    border-color: var(--spider-red);
+    margin: 5px;
+    border-radius: 20px;
+    border: 1px solid #ff4d4d;
 }
 
 /* Footer */
 footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 22px 24px;
-    color: var(--gray-text);
-    background: var(--spider-black);
-    border-top: 1px solid var(--spider-border);
-    font-size: 14px;
-}
-
-/* Responsif untuk Layar HP */
-@media (max-width: 650px) {
-    nav,
-    footer,
-    .hero {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-        gap: 10px 16px;
-        margin-top: 14px;
-    }
-
-    main {
-        padding: 24px 14px;
-    }
-
-    .section-box {
-        padding: 24px 18px;
-    }
-
-    h1 {
-        font-size: 30px;
-    }
-
-    .profile-mark {
-        width: 110px;
-        height: 110px;
-        margin-top: 20px;
-        font-size: 55px;
-    }
-}
-    font-weight: bold;
-}
-
-.button:hover,
-button:hover {
-    background: var(--dark-red);
-}
-
-.profile-mark {
-    display: grid;
-    place-items: center;
-    width: 180px;
-    height: 180px;
-    color: var(--white);
-    background: var(--black);
-    font-size: 90px;
-    font-weight: bold;
-}
-
-.skills,
-.project-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.skills span,
-.project-card span {
-    padding: 7px 14px;
-    color: var(--white);
-    background: var(--black);
-}
-
-.project-card video {
-    display: block;
-    width: 100%;
-    margin-top: 14px;
-    border: 2px solid var(--red);
-    background: var(--black);
-}
-
-form {
-    display: grid;
-    gap: 8px;
-    max-width: 600px;
-}
-
-input,
-textarea {
-    width: 100%;
-    border: 1px solid #bbbbbb;
-    padding: 10px;
-    font: inherit;
-}
-
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.project-card {
-    padding: 22px;
-    background: transparent;
-}
-
-.project-card h2 {
-    font-size: 21px;
-}
-
-.project-number {
-    color: var(--red);
-    font-size: 28px;
-    font-weight: bold;
-}
-
-footer {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 22px 24px;
-    color: var(--white);
-    background: var(--black);
-}
-
-footer div {
-    display: flex;
-    gap: 16px;
-}
-
-@media (max-width: 650px) {
-    nav,
-    footer,
-    .hero {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
-        gap: 10px 16px;
-        margin-top: 12px;
-    }
-
-    main {
-        padding: 24px 14px;
-    }
-
-    .section-box {
-        padding: 24px 18px;
-    }
-
-    h1 {
-        font-size: 34px;
-    }
-
-    .profile-mark {
-        width: 120px;
-        height: 120px;
-        margin-top: 20px;
-        font-size: 60px;
-    }
-
-    .project-grid {
-        grid-template-columns: 1fr;
-    }
+    text-align: center;
+    padding: 2rem;
+    color: #888;
 }
