@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Kontak - Sandi</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -20,19 +20,26 @@
     </header>
 
     <main>
-        <section id="contact" class="section-box">
+        <section class="section-box contact-section">
+            <p class="tag">KONTAK</p>
             <h2>Hubungi Saya</h2>
-            <form>
-                <label for="nama">Nama</label>
-                <input type="text" id="nama" name="nama" placeholder="Nama kamu" required>
-                
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="nama@email.com" required>
-                
-                <label for="pesan">Pesan</label>
-                <textarea id="pesan" name="pesan" rows="4" placeholder="Tulis pesan..." required></textarea>
-                
-                <button type="submit">Kirim Pesan</button>
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="nama">Nama</label>
+                    <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pesan">Pesan</label>
+                    <textarea id="pesan" name="pesan" rows="5" placeholder="Tuliskan pesan Anda..." required></textarea>
+                </div>
+
+                <button type="submit" class="button button-submit">Kirim Pesan</button>
             </form>
         </section>
     </main>
